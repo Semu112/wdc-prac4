@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+let lastAccessed = "";
+router.get('/last.txt', function(req, res, next) {
+  res.send(lastAccessed);
+  lastAccessed = new Date();
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -43,13 +49,6 @@ router.get('/main.html', function(req, res, next){
     </html>`);
   }
 });
-
-let lastGet = "";
-router.get('/last.txt', function(req, res, next) {
-  res.send(lastGet);
-  lastGet = new Date();
-});
-
 
 let colorArray = ["red", "yellow", "green", "blue"];
 let getAmount = 0;
