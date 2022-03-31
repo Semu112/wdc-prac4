@@ -44,8 +44,7 @@ router.get('/log.html', function(req, res, next){
   <body>
     <ul id="dates">
       <script>
-      let datesAccessed = [
-        "${datesAccessed}"];
+      let datesAccessed = [${datesAccessed}];
       for(let l in datesAccessed){
         let newListElement = document.createElement("LI");
         newListElement.innerText = datesAccessed[l];
