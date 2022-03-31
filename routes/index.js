@@ -15,8 +15,7 @@ router.get('/first.html', function(req, res, next){
       <head>
       </head>
       <body>
-        <h1>Welcome</h1>
-        <a href="https://semu112-code50-83565458-97jj9v6662p649-3000.githubpreview.dev/main.html">https://semu112-code50-83565458-97jj9v6662p649-3000.githubpreview.dev/main.html</a>
+        <h1><a href="https://semu112-code50-83565458-97jj9v6662p649-3000.githubpreview.dev/main.html">Welcome</a></h1>
       </body>
     </html>`);
     visited = true;
