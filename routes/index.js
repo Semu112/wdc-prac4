@@ -3,8 +3,14 @@ var router = express.Router();
 
 let lastAccessed = "";
 router.get('/last.txt', function(req, res, next) {
-  res.send(lastAccessed);
+  res.send(lastAccessed.toString());
   lastAccessed = new Date();
+  let testDate = new Date();
+  console.log("g: " + testDate);
+  console.log(new Date());
+  console.log(lastAccessed.toString());
+  console.log("hikj");
+  console.log("j: " + new Date());
 });
 
 /* GET home page. */
