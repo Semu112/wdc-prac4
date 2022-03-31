@@ -12,12 +12,15 @@ router.get('/last.txt', function(req, res, next) {
   lastGet = new Date();
 });
 
+/*
 let colorArray = ["red", "yellow", "green", "blue"];
 let getAmount = 0;
 router.get('/color.html', function(req, res, next) {
   let toSend = `<h1 style='color: ${colorArray[getAmount%4]}'> ${colorArray[getAmount%4]} </h1>`;
-  res.send("hi");
+  res.send(`
+  `);
   getAmount++;
 });
+*/
 
 module.exports = router;
