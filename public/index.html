@@ -14,11 +14,11 @@
 
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
-            document.getElementById("lastViewed").innerText = "This page was last viewed " + new Date();
+            document.getElementById("lastViewed").innerText = this.responseText;
         }
     };
 
-    xhttp.open("GET", "https://semu112-code50-83565458-97jj9v6662p649-8080.githubpreview.dev/last.txt", true);
+    xhttp.open("GET", "/last.txt", true);
 
     xhttp.send();
 
