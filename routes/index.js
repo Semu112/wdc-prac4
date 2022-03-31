@@ -10,9 +10,10 @@ let visited = false;
 router.get('/first.html', function(req, res, next){
   if(!visited){
     res.send(`
-    <DOCTYPE html>
+    <!DOCTYPE html>
     <html>
       <head>
+        <title>first</title>
       </head>
       <body>
         <h1><a href="https://semu112-code50-83565458-97jj9v6662p649-3000.githubpreview.dev/main.html">Welcome</a></h1>
@@ -31,9 +32,10 @@ router.get('/main.html', function(req, res, next){
   }
   else{
     res.send(`
-    <DOCTYPE html>
+    <!DOCTYPE html>
     <html>
       <head>
+        <title>main</title>
       </head>
       <body>
         <h1>My main site</h1>
