@@ -4,8 +4,7 @@ var router = express.Router();
 let lastAccessed = "";
 router.get('/last.txt', function(req, res, next) {
   res.send(lastAccessed);
-  let newDate = new Date();
-  lastAccessed = newDate.toLocaleString();
+  lastAccessed = new Date();
 });
 
 /* GET home page. */
