@@ -16,8 +16,16 @@ router.get('/last.txt', function(req, res, next) {
 let colorArray = ["red", "yellow", "green", "blue"];
 let getAmount = 0;
 router.get('/color.html', function(req, res, next) {
-  let toSend = `<h1 style='color: ${colorArray[getAmount%4]}'> ${colorArray[getAmount%4]} </h1>`;
-  res.send(toSend);
+  res.send(`
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Prac4</title>
+  </head>
+  <body>
+    <h1 style="color: ${colorArray[getAmount%4]}">${colorArray[getAmount%4]}</h1>
+  </body>
+  </html>`);
   getAmount++;
 });
 
