@@ -29,5 +29,33 @@ router.get('/color.html', function(req, res, next) {
   getAmount++;
 });
 
+let datesAccessed = [];
+router.get('/log.html', function(req, res, next){
+
+  let date = "\"" + new Date() + "\"";
+  datesAccessed.push(date);
+
+  res.send(`
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>prac4</title>
+  </head>
+  <body>
+    <ul id="dates">
+      <script>
+      let datesAccessed = [
+        "${datesAccessed}"];
+      for(let l in datesAccessed){
+        let newListElement = document.createElement("LI");
+        newListElement.innerText = datesAccessed[l];
+        document.getElementById("dates").appendChild(newListElement);
+      }
+      </script>
+    </ul>
+  </body>
+  </html>
+  `);
+});
 
 module.exports = router;

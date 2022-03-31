@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>prac4</title>
+  </head>
+  <body>
+    <ul id="dates">
+      <script>
+      let scriptDatesAccessed = [new Date()];
+      for(let l in scriptDatesAccessed){
+        let newListElement = document.createElement("LI");
+        newListElement.innerText = scriptDatesAccessed[l];
+        document.getElementById("dates").appendChild(newListElement);
+      }
+      </script>
+    </ul>
+  </body>
+  </html>
