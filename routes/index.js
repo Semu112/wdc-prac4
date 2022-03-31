@@ -6,6 +6,43 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+let visited = false;
+router.get('/first.html', function(req, res, next){
+  if(!visited){
+    res.send(`
+    <DOCTYPE html>
+    <html>
+      <head>
+      </head>
+      <body>
+        <h1>Welcome</h1>
+        <a href="https://semu112-code50-83565458-97jj9v6662p649-3000.githubpreview.dev/main.html">https://semu112-code50-83565458-97jj9v6662p649-3000.githubpreview.dev/main.html</a>
+      </body>
+    </html>`);
+    visited = true;
+  }
+  else{
+    res.redirect('/main.html');
+  }
+});
+
+router.get('/main.html', function(req, res, next){
+  if(!visited){
+    res.redirect('/first.html');
+  }
+  else{
+    res.send(`
+    <DOCTYPE html>
+    <html>
+      <head>
+      </head>
+      <body>
+        <h1>My main site</h1>
+      </body>
+    </html>`);
+  }
+});
+
 let lastGet = "";
 router.get('/last.txt', function(req, res, next) {
   res.send(lastGet);
