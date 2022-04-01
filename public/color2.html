@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>color2</title>
+    </head>
+    <body>
+        <script>
+            function getColorTxt(){
+                var xhttp = new XMLHttpRequest();
+
+                xhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200){
+                        document.getElementById("coloredHeading").innerText = this.responseText;
+                        document.getElementById("coloredHeading").style.color = this.responseText;
+                    }
+                };
+
+                xhttp.open("GET", "https://semu112-code50-83565458-97jj9v6662p649-8080.githubpreview.dev/color.txt", true);
+
+                xhttp.send();
+            }
+            getColorTxt();
+        </script>
+        <h1 id="coloredHeading"></h1>
+        <button onclick="getColorTxt()"></button>
+    </body>
+</html>
