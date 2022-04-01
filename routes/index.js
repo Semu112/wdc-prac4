@@ -21,14 +21,7 @@ router.get('/about.ajax', function(req, res, next){
   console.log("about");
 
   var fileName = 'about.ajax';
-  res.sendFile(fileName, options, function (err) {
-      if (err) {
-          next(err);
-      } else {
-          console.log('Sent:', fileName);
-          next();
-      }
-  });
+  res.sendFile(fileName);
 });
 //----------------------------end of task 4.4
 
