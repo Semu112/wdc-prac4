@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>site</title>
+    </head>
+    <script>
+        function AJAX(path){
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.querySelector("main").innerHTML = this.responseText;
+                }
+            }
+
+            xhttp.open("GET", "/" + path + ".ajax", true);
+
+            xhttp.send();
+        }
+    </script>
+    <body>
+        <h1>My AJAX Site</h1>
+        <button onclick="AJAX('contact')">contact</button>
+        <button onclick="AJAX('search')">search</button>
+        <button onclick="AJAX('about')">about</button>
+        <main><main>
+    </body>
+</html>
