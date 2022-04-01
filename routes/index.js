@@ -1,6 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+
+let colorArray = ["red", "yellow", "green", "blue"]; //should work for color.txt and color.html
+let colorCounter = 0;
+
+router.get('/color.txt', function(req, res, next) {
+  res.send(colorArray[colorCounter%4]);
+  colorCounter++;
+});
+
 let lastAccessed = "";
 router.get('/last.txt', function(req, res, next) {
   res.send(lastAccessed.toString());
@@ -57,7 +66,6 @@ router.get('/main.html', function(req, res, next){
   }
 });
 
-let colorArray = ["red", "yellow", "green", "blue"];
 let getAmount = 0;
 router.get('/color.html', function(req, res, next) {
   res.send(`
