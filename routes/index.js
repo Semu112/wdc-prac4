@@ -19,9 +19,8 @@ router.get('/search.ajax', function(req, res, next){
 
 router.get('/about.ajax', function(req, res, next){
   console.log("about");
-
-  var fileName = 'about.ajax';
-  res.sendFile(fileName);
+  
+  res.sendFile('about.ajax');
 });
 //----------------------------end of task 4.4
 
