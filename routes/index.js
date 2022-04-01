@@ -1,6 +1,24 @@
 var express = require('express');
 var router = express.Router();
 
+let timestamps = [];
+router.get('/log.json', function(req, res, next) {
+
+  console.log("log");
+
+  timestamps.push("" + new Date());
+  res.send(timestamps);
+
+  console.log(timestamps);
+});
+
+router.get('/log-ro.json', function(req, res, next){
+
+  console.log("log-ro");
+  res.send(timestamps);
+
+  console.log(timestamps);
+});
 
 let colorArray = ["red", "yellow", "green", "blue"]; //should work for color.txt and color.html
 let colorCounter = 0;
