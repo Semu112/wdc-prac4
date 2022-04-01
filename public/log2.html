@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>log2</title>
+    </head>
+    <body>
+        <script>
+
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200){
+                    let timestampArray = JSON.parse(this.responseText);
+                    let newList = document.createElement("UL");
+                    document.body.appendChild(newList);
+                    newList.id = "list";
+                    for(let i in timestampArray){
+                        let newListElement = document.createElement("LI");
+                        newListElement.innerText = timestampArray[i];
+                        document.getElementById("list").appendChild(newListElement);
+                    }
+                }
+            }
+
+            xhttp.open("GET", "/log.json", true);
+
+            xhttp.send();
+
+
+            setTimeout(function() {recursive()}, 10000);
+
+            function recursive(){
+                document.getElementById("list").remove();
+                xhttp.open("GET", "/log-ro.json", true);
+                xhttp.send();
+                setTimeout(function() {recursive()}, 10000);
+            }
+        </script>
+    </body>
+</html>
