@@ -1,6 +1,37 @@
 var express = require('express');
 var router = express.Router();
 
+//----------------------------------task 4.4
+router.get('/contact.ajax', function(req, res, next){
+  console.log("contact");
+
+  res.send('<a>seamuspitcher@gmail.com</a>');
+});
+
+router.get('/search.ajax', function(req, res, next){
+  console.log("search");
+
+  res.send(`
+    <input type="text"></input>
+    <button>search</button>
+  `);
+});
+
+router.get('/about.ajax', function(req, res, next){
+  console.log("about");
+
+  var fileName = 'about.ajax';
+  res.sendFile(fileName, options, function (err) {
+      if (err) {
+          next(err);
+      } else {
+          console.log('Sent:', fileName);
+          next();
+      }
+  });
+});
+//----------------------------end of task 4.4
+
 let timestamps = [];
 router.get('/log.json', function(req, res, next) {
 
