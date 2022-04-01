@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/contact.ajax', function(req, res, next){
   console.log("contact");
 
-  res.send('<a>seamuspitcher@gmail.com</a>');
+  res.send('<a href="seamuspitcher@gmail.com">seamuspitcher@gmail.com</a>');
 });
 
 router.get('/search.ajax', function(req, res, next){
